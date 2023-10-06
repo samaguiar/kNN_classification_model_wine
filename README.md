@@ -70,6 +70,7 @@ Number of Fisher Scoring iterations: 7
 ```
 
 By looking at the summary of the model, I can see that the model looks like it is fitting the data well due to the low p-values. Next, I determine the accuracy and Kappa value using the code below to assess the model’s prediction accuracy: 
+```
 > m
 Generalized Linear Model 
 6497 samples
@@ -102,7 +103,9 @@ Negative: 1599
 ***Performance Metrics***
 Group 1 Optimal Informedness = 0.784736836594738
 Group 1 AUC-ROC = 0.95
+```
 Figure 1: Precision Gain vs. Recall Gain
+![precision vs recall (sensitivity)](https://github.com/samaguiar/kNN_classification_model_wine/assets/89755252/51bb1369-75d9-4304-9969-d8042287b0bf)
 
 
 Figure 2: Precision vs. Recall (Sensitivity)
@@ -111,10 +114,14 @@ Figure 3: ROC Plot
 
 According to Thulin, a ROC value greater than 0.5 indicates the model is performing better than a model that randomly guesses and a value of 1 represents the model can perfectly perfect the classifications. Figure 3 shows the AUC-ROC value. The model for wine has a ROC value of 0.95, which indicates that the model is very good at classifying the wines as ‘red’ or ‘white’, with only a few false positives. 
 Next, I constructed a confidence interval to help determine how reliable the ROC value is for the model. I used the following code: 
+```
 > plots$optres[[1]][13,]
         Score        CI
 AUC-ROC  0.95 0.95-0.95
+```
+
 The output shows that with 95% confidence the ROC values should always be 0.95. Since the confidence interval is 0.95-0.95, this suggests that there is no variability. While this could be accurate, this is normally not the case for confidence intervals and suggests that there may need to be changes to the model. To determine if this was a case of no variability, I increased and decreased the number of repeats of the training to see if this would change the confidence interval. I used the following models and the output was the same for both:
+```
 #increased number of repeats
 >tc <- trainControl(method = 'repeatedcv',
                    number = 10,
@@ -139,11 +146,17 @@ The output shows that with 95% confidence the ROC values should always be 0.95. 
            trControl = tc,
            method = "glm",
            family = "binomial")
+```
+
 After running plots$optres[[1]][13,] for each new model, the confidence interval was the same, as seen in the output below:
+```
 Score        CI
 AUC-ROC  0.95 0.95-0.95
+```
 Lastly, I created a calibration curve to show how well calibrated the model is. In this plot, I look for the predicted probabilities to follow the actual frequencies closely (Thulin, 2022). I used the following code:
+```
 > plots$cc
+```
 Figure 4: Calibration Curve
 
 In this model, the predicted probability follows the true probability fairly closely, indicating this is a well-calibrated model. 
