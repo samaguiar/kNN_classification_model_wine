@@ -7,18 +7,14 @@ This project was created for MDSD-531: Statistics for Data Science at the Univer
 ### Setting up and Training the KNN Model ###
 To fit the KNN model, I used the following code to import the data, create a working data set with new classifications, and import packages: 
 ```
-#Import data about white and red wines: 
 white <- read.csv("https://tinyurl.com/winedata1",sep = ";") 
 red <- read.csv("https://tinyurl.com/winedata2",sep = ";") 
-# Add a type variable: 
 white$type <- "white" 
-red$type <- "red" 
-# Merge the datasets: 
+red$type <- "red"
 wine <- rbind(white, red) 
 wine$type <- factor(wine$type) 
 install.packages('caret', dependencies = TRUE) 
-library(caret) 
-# to visualize results you need the following 
+library(caret)  
 install.packages('MLeval', dependencies = TRUE) 
 library(MLeval)
 ```
