@@ -1,7 +1,7 @@
 # kNN_classification_model_wine
 
 ### The Data ###
-The data was retrieved from <a href="https://modernstatisticswithr.com/index.html">Modern Statistics with R by Måns Thulin</a>. It can be found here. 
+The data was retrieved from <a href="https://modernstatisticswithr.com/index.html">Modern Statistics with R by Måns Thulin</a>. 
 This project was created for MDSD-531: Statistics for Data Science at the University of the Cumberlands.
 
 ### Setting up and Training the KNN Model ###
