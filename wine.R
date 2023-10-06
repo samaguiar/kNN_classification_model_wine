@@ -41,3 +41,9 @@ plots <- evalm(m)
 
 #create a ROC plot
 plots$roc
+
+#construct confidence interval
+plots$optres[[1]][13,]
+
+# Calibration curve:
+plots$cc
