@@ -21,21 +21,22 @@ library(MLeval)
 This code was provided by Thulin in Modern statistics with R (Thulin, 2022).
 
 Next, to train the model, I used the following code:
->#train model using 10-fold cross-validation
->tc <- trainControl(method = 'repeatedcv',
+```
+#train model using 10-fold cross-validation
+tc <- trainControl(method = 'repeatedcv',
                    number = 10,
                    repeats = 100,
                    savePredictions = TRUE,
                    classProbs = TRUE)
->#create model
->m <- train(type ~ pH + alcohol + fixed.acidity 
+#create model
+m <- train(type ~ pH + alcohol + fixed.acidity 
            + residual.sugar,
            data = wine,
            trControl = tc,
            method = "glm",
            family = "binomial")
->#print model summary
->print(summary(m))
+#print model summary
+print(summary(m))
 [1] Call:
 NULL
 Coefficients:
@@ -66,6 +67,8 @@ Null deviance: 7251  on 6496  degrees of freedom
 Residual deviance: 3175  on 6492  degrees of freedom
 AIC: 3185
 Number of Fisher Scoring iterations: 7
+```
+
 By looking at the summary of the model, I can see that the model looks like it is fitting the data well due to the low p-values. Next, I determine the accuracy and Kappa value using the code below to assess the model’s prediction accuracy: 
 > m
 Generalized Linear Model 
