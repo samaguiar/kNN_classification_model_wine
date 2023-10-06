@@ -105,15 +105,12 @@ Group 1 Optimal Informedness = 0.784736836594738
 Group 1 AUC-ROC = 0.95
 ```
 Figure 1: Precision Gain vs. Recall Gain
-
 ![precision vs recall (sensitivity)](https://github.com/samaguiar/kNN_classification_model_wine/assets/89755252/51bb1369-75d9-4304-9969-d8042287b0bf)
 
 Figure 2: Precision vs. Recall (Sensitivity)
-
 ![precision vs recall](https://github.com/samaguiar/kNN_classification_model_wine/assets/89755252/059a8f19-b007-46aa-9590-950120c679a2)
 
 Figure 3: ROC Plot
-
 ![ROC plot](https://github.com/samaguiar/kNN_classification_model_wine/assets/89755252/3ab47103-a8db-4974-840a-c23f55e56837)
 
 According to Thulin, a ROC value greater than 0.5 indicates the model is performing better than a model that randomly guesses and a value of 1 represents the model can perfectly perfect the classifications. Figure 3 shows the AUC-ROC value. The model for wine has a ROC value of 0.95, which indicates that the model is very good at classifying the wines as ‘red’ or ‘white’, with only a few false positives. 
@@ -162,9 +159,7 @@ Lastly, I created a calibration curve to show how well calibrated the model is. 
 > plots$cc
 ```
 Figure 4: Calibration Curve
-
 ![calibration curve](https://github.com/samaguiar/kNN_classification_model_wine/assets/89755252/5725478a-5cb8-4eb7-a465-4fb41b581202)
-
 In this model, the predicted probability follows the true probability fairly closely, indicating this is a well-calibrated model. 
 
 ### References ###
