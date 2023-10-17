@@ -83,9 +83,10 @@ Resampling results:
   Accuracy   Kappa    
   0.8928447  0.7036358
 The accuracy of the model is about 0.893, showing that the model is accurately predicting the classes of wine 89% of the time. The Cohen’s Kappa is about 0.704, which measures the model’s ability to predict the classes against the actual classification. In this case, the model successfully does this 70% of the time. With both the accuracy and Kappa value being greater than 60%, the model is doing well at predicting the classifications (KNIMETV, 2020).
-
+```
 ### Evaluating the Model ###
 To evaluate the model, I created a ROC plot. A ROC plot helps assess the overall classification ability of the model. I used the following code to create a ROC plot: 
+```
 > #evaluate the model
 > plots <- evalm(m)
 ***MLeval: Machine Learning Model Evaluation***
